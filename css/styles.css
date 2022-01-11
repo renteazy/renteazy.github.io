@@ -38,6 +38,19 @@ Colors:
 
 
 /******************************/
+/*     00. Custom Styles      */
+/******************************/
+
+.the-problem-text-container {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/******************************/
 /*     01. General Styles     */
 /******************************/
 body,
@@ -95,6 +108,14 @@ h6 {
     letter-spacing: -0.1px;
 }
 
+.landing-title h1, .join-header {
+    color: #ffff00 !important;
+}
+
+.landing-title h2 {
+    color: #ffff8e !important;
+}
+
 .above-heading {
     color: #5f4dee;
     font: 700 0.75rem/0.875rem "Open Sans", sans-serif;
@@ -105,6 +126,7 @@ h6 {
     margin-bottom: 3.25rem;
 }
 
+c
 .testimonial-text {
     font: italic 400 1rem/1.625rem "Open Sans", sans-serif;
 }
@@ -902,10 +924,17 @@ input[type='checkbox'] {
 /************************/
 /*     07. Features     */
 /************************/
+.landing-form {
+    text-align: center;
+}
+
+.background-card {
+    background-color: #f3f7fd;
+}
+
 .tabs {
     padding-top: 6rem;
     padding-bottom: 2rem;
-    background-color: #f3f7fd;
 }
 
 .tabs .h2-heading,
@@ -1812,7 +1841,6 @@ a:hover.back-to-top {
 
     .header .image-container {
         position: relative;
-        margin-top: 3rem;
     }
 
     .header .image-container .img-wrapper {
@@ -1990,8 +2018,8 @@ a:hover.back-to-top {
     /* end of general styles */
     /* Header */
     .header .header-content {
-        padding-top: 11rem;
-        padding-bottom: 5rem;
+        padding-top: 8rem;
+        padding-bottom: 8rem;
     }
 
     .header .text-container {
@@ -2000,7 +2028,6 @@ a:hover.back-to-top {
     }
 
     .header .image-container {
-        margin-top: 1rem;
         margin-left: 1.5rem;
     }
 
@@ -2028,7 +2055,7 @@ a:hover.back-to-top {
     }
 
     .cards-1 .card-image {
-        width: 12.5rem;
+        width: 15.5rem;
     }
 
     /* end of description */
