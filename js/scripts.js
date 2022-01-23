@@ -243,7 +243,9 @@
     $.ajax({
       type: 'POST',
       url: 'https://g6gtqb4crj.execute-api.us-west-2.amazonaws.com/default/addToWaitlist',
-      data: data,
+      data: JSON.stringify(data),
+      dataType: 'json',
+      contentType: 'application/json; charset=utf-8',
       success: function(text) {
         if (text == 'success') {
           console.log('--------------- success');
@@ -254,11 +256,11 @@
           wsubmitMSG(false, text);
         }
       },
-      error: function (request, status, error) {
+      error: function(request, status, error) {
         console.log(request);
         console.log(status);
         console.log(error);
-      }
+      },
     });
   }
 
