@@ -232,9 +232,9 @@
     var name = $('#wname').val();
 
     var data = {
-      "email": email,
-      "companyName": companyName,
-      "customerType": customerType,
+      'email': email,
+      'companyName': companyName,
+      'customerType': customerType,
       'name': name,
     };
 
@@ -247,7 +247,10 @@
       dataType: 'json',
       ContentType: 'application/json',
       headers: {
-        'Content-Type': 'application/json; charset=utf-8',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': 'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token',
+        'Access-Control-Allow-Credentials': true,
+        'Content-Type': 'application/json',
       },
       success: function(text) {
         if (text == 'success') {
