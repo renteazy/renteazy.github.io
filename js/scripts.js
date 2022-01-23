@@ -232,10 +232,10 @@
     var name = $('#wname').val();
 
     var data = {
-      email,
-      companyName,
-      customerType,
-      name,
+      "email": email,
+      "companyName": companyName,
+      "customerType": customerType,
+      'name': name,
     };
 
     console.log(data);
@@ -245,7 +245,10 @@
       url: 'https://g6gtqb4crj.execute-api.us-west-2.amazonaws.com/default/addToWaitlist',
       data: JSON.stringify(data),
       dataType: 'json',
-      contentType: 'application/json; charset=utf-8',
+      ContentType: 'application/json',
+      headers: {
+        'Content-Type': 'application/json; charset=utf-8',
+      },
       success: function(text) {
         if (text == 'success') {
           console.log('--------------- success');
