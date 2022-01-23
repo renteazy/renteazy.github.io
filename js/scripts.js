@@ -215,21 +215,21 @@
     console.log('------ submitted');
     if (event.isDefaultPrevented()) {
       // handle the invalid form...
-      lformError();
-      lsubmitMSG(false, 'Please fill all fields!');
+      wformError();
+      wsubmitMSG(false, 'Please fill all fields!');
     } else {
       // everything looks good!
       event.preventDefault();
-      lsubmitForm();
+      wsubmitForm();
     }
   });
 
-  function lsubmitForm() {
+  function wsubmitForm() {
     // initiate variables with form content
-    var email = $('#lemail').val();
-    var customerType = $('#lcustomnerType').val();
-    var companyName = $('#lcompanyName').val();
-    var name = $('#lname').val();
+    var email = $('#wemail').val();
+    var customerType = $('#wcustomerType').val();
+    var companyName = $('#wcompanyName').val();
+    var name = $('#wname').val();
 
     var data = {
       email,
@@ -247,11 +247,11 @@
       success: function(text) {
         if (text == 'success') {
           console.log('--------------- success');
-          lformSuccess();
+          wformSuccess();
         } else {
           console.log('--------------- fail');
-          lformError();
-          lsubmitMSG(false, text);
+          wformError();
+          wsubmitMSG(false, text);
         }
       },
       error: function (request, status, error) {
@@ -262,13 +262,13 @@
     });
   }
 
-  function lformSuccess() {
+  function wformSuccess() {
     $('#waitListForm')[0].reset();
     lsubmitMSG(true, 'Log In Submitted!');
     $('input').removeClass('notEmpty'); // resets the field label after submission
   }
 
-  function lformError() {
+  function wformError() {
     $('#waitListForm').
         removeClass().
         addClass('shake animated').
@@ -277,13 +277,13 @@
         });
   }
 
-  function lsubmitMSG(valid, msg) {
+  function wsubmitMSG(valid, msg) {
     if (valid) {
       var msgClasses = 'h3 text-center tada animated';
     } else {
       var msgClasses = 'h3 text-center';
     }
-    $('#lmsgSubmit').removeClass().addClass(msgClasses).text(msg);
+    $('#wmsgSubmit').removeClass().addClass(msgClasses).text(msg);
   }
 
   /* Newsletter Form */
