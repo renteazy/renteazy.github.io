@@ -905,14 +905,10 @@
         <div class="form-container">
           <form id="logInForm" data-toggle="validator" data-focus="false">
             <div class="form-group">
-              <input type="text" class="form-control-input" id="lname" required>
-              <label class="label-control" for="lemail">Name</label>
-              <div class="help-block with-errors"></div>
-            </div>
-            <div class="form-group">
               <select class="form-control-select" id="lcustomnerType" required>
                 <option class="select-option" value="" disabled selected>Select Option</option>
                 <option class="select-option" value="Delete data">Property manager</option>
+                <option class="select-option" value="Delete data">Real estate agent</option>
                 <option class="select-option" value="Show me data">Renter</option>
               </select>
               <div class="help-block with-errors"></div>
@@ -920,6 +916,11 @@
             <div class="form-group">
               <input type="text" class="form-control-input" id="lcompanyName" required>
               <label class="label-control" for="lemail">Company name</label>
+              <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control-input" id="lname" required>
+              <label class="label-control" for="lemail">Full Name</label>
               <div class="help-block with-errors"></div>
             </div>
             <div class="form-group">
