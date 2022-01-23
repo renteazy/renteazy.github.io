@@ -211,7 +211,7 @@
   }
 
   /* Log In Form */
-  $('#logInForm').validator().on('submit', function(event) {
+  $('#waitListForm').validator().on('submit', function(event) {
     console.log('------ submitted');
     if (event.isDefaultPrevented()) {
       // handle the invalid form...
@@ -263,13 +263,13 @@
   }
 
   function lformSuccess() {
-    $('#logInForm')[0].reset();
+    $('#waitListForm')[0].reset();
     lsubmitMSG(true, 'Log In Submitted!');
     $('input').removeClass('notEmpty'); // resets the field label after submission
   }
 
   function lformError() {
-    $('#logInForm').
+    $('#waitListForm').
         removeClass().
         addClass('shake animated').
         one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
