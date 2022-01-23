@@ -242,7 +242,7 @@
 
     $.ajax({
       type: 'POST',
-      url: 'https://www.facebook.com/',
+      url: 'https://g6gtqb4crj.execute-api.us-west-2.amazonaws.com/default/addToWaitlist',
       data: data,
       success: function(text) {
         if (text == 'success') {
