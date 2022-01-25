@@ -4,6 +4,7 @@
    Created: Sep 2019
    Description: Custom JS file
 */
+var wloading = false;
 
 (function($) {
   'use strict';
@@ -237,7 +238,7 @@
       'name': name,
     };
 
-    console.log(data);
+    wformToggleLoading(true);
 
     $.ajax({
       type: 'POST',
@@ -247,28 +248,36 @@
       headers: {
         'Content-Type': 'application/json',
       },
-      success: function(text) {
-        if (text == 'success') {
-          console.log('--------------- success');
+      complete: function(xhr, textStatus) {
+        wformToggleLoading(false);
+      },
+      success: function(data, textStatus, xhr) {
+        if (xhr.status === 200) {
           wformSuccess();
         } else {
-          console.log('--------------- fail');
           wformError();
           wsubmitMSG(false, text);
         }
       },
       error: function(request, status, error) {
-        console.log(request);
-        console.log(status);
-        console.log(error);
       },
     });
   }
 
+  function wformToggleLoading(loading) {
+    wloading = loading;
+    console.log(wloading);
+    if (wloading){
+      $('wmsgSubmit').addClass('loading');
+      wsubmitMSG(true, 'Loading...');
+    }
+  }
+
   function wformSuccess() {
     $('#waitListForm')[0].reset();
-    lsubmitMSG(true, 'Log In Submitted!');
+    wsubmitMSG(true, 'Log In Submitted!');
     $('input').removeClass('notEmpty'); // resets the field label after submission
+    $('wmsgSubmit').addClass('notEmpty'); // resets the field label after submission
   }
 
   function wformError() {
@@ -311,7 +320,7 @@
       url: 'php/newsletterform-process.php',
       data: 'email=' + email + '&terms=' + terms,
       success: function(text) {
-        if (text == 'success') {
+        if (text === 'success') {
           nformSuccess();
         } else {
           nformError();
