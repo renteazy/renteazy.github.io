@@ -228,12 +228,11 @@
     // initiate variables with form content
     var email = $('#wemail').val();
     var customerType = $('#wcustomerType').val();
-    var companyName = $('#wcompanyName').val();
+    // var companyName = $('#wcompanyName').val();
     var name = $('#wname').val();
 
     var data = {
       'email': email,
-      'companyName': companyName,
       'customerType': customerType,
       'name': name,
     };
