@@ -1629,6 +1629,7 @@ a:hover.back-to-top {
 /****************************************/
 .ex-2-header {
     padding-top: 9rem;
+    padding-bottom: 6rem;
     background-color: #5f4dee;
     text-align: center;
     min-height: 100vh;
