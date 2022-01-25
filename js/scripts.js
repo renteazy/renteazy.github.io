@@ -213,7 +213,6 @@ var wloading = false;
 
   /* Log In Form */
   $('#waitListForm').validator().on('submit', function(event) {
-    console.log('------ submitted');
     if (event.isDefaultPrevented()) {
       // handle the invalid form...
       wformError();
@@ -229,7 +228,6 @@ var wloading = false;
     // initiate variables with form content
     var email = $('#wemail').val();
     var customerType = $('#wcustomerType').val();
-    // var companyName = $('#wcompanyName').val();
     var name = $('#wname').val();
 
     var data = {
@@ -266,16 +264,15 @@ var wloading = false;
 
   function wformToggleLoading(loading) {
     wloading = loading;
-    console.log(wloading);
     if (wloading){
       $('wmsgSubmit').addClass('loading');
-      wsubmitMSG(true, 'Loading...');
+      wsubmitMSG(true, 'Submitting...');
     }
   }
 
   function wformSuccess() {
     $('#waitListForm')[0].reset();
-    wsubmitMSG(true, 'Log In Submitted!');
+    wsubmitMSG(true, 'Added to the waiting list');
     $('input').removeClass('notEmpty'); // resets the field label after submission
     $('wmsgSubmit').addClass('notEmpty'); // resets the field label after submission
   }
