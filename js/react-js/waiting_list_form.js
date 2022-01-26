@@ -24,6 +24,11 @@ class WaitListForm extends React.Component {
     var email = $('#wemail').val();
     var customerType = $('input[name="customerType"]:checked').val();
     var name = $('#wname').val();
+
+    if (!email || !name) {
+      return;
+    }
+
     var data = {
       'email': email,
       'customerType': customerType,
