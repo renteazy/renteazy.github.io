@@ -106,7 +106,7 @@ class WaitListForm extends React.Component {
               <form id="waitListForm" data-toggle="validator" data-focus="false" onSubmit={this.handleSubmit}>
                 <div className="form-group">
                   <input type="text" className="form-control-input" id="wname" required onBlur={this.handleBlur}/>
-                  <label className="label-control" htmlFor="wname">Full Name -{this.state.loading.toString()}-</label>
+                  <label className="label-control" htmlFor="wname">Full Name</label>
                   <div className="help-block with-errors"/>
                 </div>
                 <div className="form-group">

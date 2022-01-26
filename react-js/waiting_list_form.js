@@ -118,9 +118,7 @@ var WaitListForm = function (_React$Component) {
             React.createElement(
               'label',
               { className: 'label-control', htmlFor: 'wname' },
-              'Full Name -',
-              this.state.loading.toString(),
-              '-'
+              'Full Name'
             ),
             React.createElement('div', { className: 'help-block with-errors' })
           ),
