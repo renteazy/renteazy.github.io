@@ -272,7 +272,7 @@ var wloading = false;
 
   function wformSuccess() {
     $('#waitListForm')[0].reset();
-    wsubmitMSG(true, 'Added to the waiting list');
+    wsubmitMSG(true, 'Added to the waiting list :partying_face:');
     $('input').removeClass('notEmpty'); // resets the field label after submission
     $('wmsgSubmit').addClass('notEmpty'); // resets the field label after submission
   }
