@@ -145,6 +145,7 @@ var wloading = false;
   /* Move Form Fields Label When User Types */
   // for input and textarea fields
   $('input, textarea').keyup(function() {
+    console.log('---------TEST');
     if ($(this).val() != '') {
       $(this).addClass('notEmpty');
     } else {

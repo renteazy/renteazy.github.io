@@ -88,37 +88,11 @@
       <div class="col-lg-12">
         <h1 class="join-header">Join the waiting list</h1>
         <p>Join the future of renting</p>
-        <!-- Sign Up Form -->
+        <!-- Waiting list Form -->
         <div class="form-container">
-          <form id="waitListForm" data-toggle="validator" data-focus="false">
-            <div class="form-group">
-              <select class="form-control-select" id="wcustomerType" required>
-                <option class="select-option" value="" disabled selected>Select Option</option>
-                <option class="select-option" value="renter">Renter</option>
-                <option class="select-option" value="propertyManager">Property manager</option>
-                <option class="select-option" value="realEstateAgent">Real estate agent</option>
-              </select>
-              <div class="help-block with-errors"></div>
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control-input" id="wname" required>
-              <label class="label-control" for="wname">Full Name</label>
-              <div class="help-block with-errors"></div>
-            </div>
-            <div class="form-group">
-              <input type="email" class="form-control-input" id="wemail" required>
-              <label class="label-control" for="wemail">Email</label>
-              <div class="help-block with-errors"></div>
-            </div>
-            <div class="form-group">
-              <button type="submit" class="form-control-submit-button">JOIN</button>
-            </div>
-            <div class="form-message">
-              <div id="wmsgSubmit" class="h3 text-center hidden"></div>
-            </div>
-          </form>
-        </div> <!-- end of form container -->
-        <!-- end of sign up form -->
+          <div id="waiting_list_form"></div>
+        </div>
+        <!-- end of Waiting list form -->
 
       </div> <!-- end of col -->
     </div> <!-- end of row -->
@@ -136,5 +110,12 @@
 <script src="js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
 <script src="js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
 <script src="js/scripts.js"></script> <!-- Custom scripts -->
+
+<!-- Load React. -->
+<!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+<script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+<!--<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>-->
+<script src="./react-js/waiting_list_form.js"></script>
 </body>
 </html>

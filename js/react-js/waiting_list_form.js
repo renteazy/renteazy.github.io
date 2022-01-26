@@ -1,0 +1,155 @@
+'use strict';
+
+class WaitListForm extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      loading: false,
+      addedToWaitingList: false,
+      customerType: {
+        placeholder: 'Select an option',
+        option: [
+          'Renter',
+          'Property manager',
+          'Real estate agent',
+        ],
+      },
+    };
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    var email = $('#wemail').val();
+    var customerType = $('input[name="customerType"]:checked').val();
+    var name = $('#wname').val();
+    var data = {
+      'email': email,
+      'customerType': customerType,
+      'name': name,
+    };
+    this.submitForm(data);
+  };
+
+  submitForm = (formData) => {
+    this.setState((state) => {
+      return ({
+        ...state,
+        loading: true,
+      });
+    });
+
+    const formSubmitSuccess = () => {
+      this.setState((state) => {
+        return ({
+          ...state,
+          addedToWaitingList: true,
+        });
+      });
+    };
+
+    const formSubmitError = () => {
+      console.log('-----------error');
+    };
+
+    const formSubmitComplete = () => {
+      this.setState((state) => {
+        return ({
+          ...state,
+          loading: false,
+        });
+      });
+    };
+
+    $.ajax({
+      type: 'POST',
+      url: 'https://g6gtqb4crj.execute-api.us-west-2.amazonaws.com/default/addToWaitlist',
+      data: JSON.stringify(formData),
+      dataType: 'json',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      complete: function(xhr, textStatus) {
+        formSubmitComplete();
+      },
+      success: function(data, textStatus, xhr) {
+        if (xhr.status === 200) {
+          formSubmitSuccess();
+        } else {
+          formSubmitError();
+        }
+      },
+      error: function(request, status, error) {
+      },
+    });
+  };
+
+  handleBlur = (e) => {
+    if (e.target.value !== '') {
+      $(e.target).addClass('notEmpty');
+    } else {
+      $(e.target).removeClass('notEmpty');
+    }
+  };
+
+  render() {
+    return (
+        <div>
+          {!this.state.addedToWaitingList &&
+          (
+              <form id="waitListForm" data-toggle="validator" data-focus="false" onSubmit={this.handleSubmit}>
+                <div className="form-group">
+                  <input type="text" className="form-control-input" id="wname" required onBlur={this.handleBlur}/>
+                  <label className="label-control" htmlFor="wname">Full Name -{this.state.loading.toString()}-</label>
+                  <div className="help-block with-errors"/>
+                </div>
+                <div className="form-group">
+                  <input type="email" className="form-control-input" id="wemail" required onBlur={this.handleBlur}/>
+                  <label className="label-control" htmlFor="wemail">Email</label>
+                  <div className="help-block with-errors"/>
+                </div>
+                <div className="form-group radio-container">
+                  <div className="form-control-radio">
+                    <input type="radio" id="customerTypeRenter" name="customerType" value="renter" defaultChecked/>
+                    <label htmlFor="customerTypeRenter">{this.state.customerType.option[0]}</label>
+                  </div>
+                  <div className="form-control-radio">
+                    <input type="radio" id="customerTypePropertyManager" name="customerType" value="propertyManager"/>
+                    <label htmlFor="customerTypePropertyManager">{this.state.customerType.option[1]}</label>
+                  </div>
+                  <div className="form-control-radio">
+                    <input type="radio" id="customerTypeEstateAgent" name="customerType" value="estateAgent"/>
+                    <label htmlFor="customerTypeEstateAgent">{this.state.customerType.option[2]}</label>
+                  </div>
+                </div>
+                <div className="form-group form-button">
+                  {!this.state.loading && (
+                      <button type="submit" className="form-control-submit-button">JOIN</button>
+                  )}
+                  {this.state.loading && (
+                      <div className="loader"/>
+                  )}
+                </div>
+                <div className="form-message">
+                  <div id="wmsgSubmit" className="h3 text-center hidden"/>
+                </div>
+              </form>
+          )}
+          {this.state.addedToWaitingList && (
+              <div className='waiting-list-added'>
+                <img src="images/r-benifits.png" alt="alternative"/>
+                <h1>
+                  You have been added!
+                </h1>
+              </div>
+          )}
+        </div>
+    );
+  }
+}
+
+const domContainer = document.querySelector('#waiting_list_form');
+ReactDOM.render(<WaitListForm/>, domContainer);
+
+
