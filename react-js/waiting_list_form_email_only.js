@@ -35,7 +35,9 @@ var WaitListEmailForm = function (_React$Component) {
     _this.submitForm = function (formData) {
       _this.setState(function (state) {
         return Object.assign({}, state, {
-          loading: true
+          loading: true,
+          errorMessage: '',
+          hasError: false
         });
       });
 
@@ -43,6 +45,16 @@ var WaitListEmailForm = function (_React$Component) {
         _this.setState(function (state) {
           return Object.assign({}, state, {
             addedToWaitingList: true
+          });
+        });
+      };
+
+      var errorHandling = function errorHandling(error) {
+        $('#waitListForm')[0].reset();
+        _this.setState(function (state) {
+          return Object.assign({}, state, {
+            errorMessage: error.message,
+            hasError: true
           });
         });
       };
@@ -72,6 +84,10 @@ var WaitListEmailForm = function (_React$Component) {
         },
         success: function success(data, textStatus, xhr) {
           if (xhr.status === 200) {
+            if (data.error) {
+              errorHandling(data.error);
+              return;
+            }
             formSubmitSuccess();
           } else {
             formSubmitError();
@@ -92,6 +108,8 @@ var WaitListEmailForm = function (_React$Component) {
     _this.state = {
       loading: false,
       addedToWaitingList: false,
+      hasError: false,
+      errorMessage: '',
       customerType: {
         placeholder: 'Select an option',
         option: ['Renter', 'Property manager', 'Real estate agent']
@@ -179,6 +197,12 @@ var WaitListEmailForm = function (_React$Component) {
             null,
             'See you soon \uD83E\uDD73'
           )
+        ),
+        this.state.hasError && React.createElement(
+          'div',
+          { className: 'waiting-list-error' },
+          this.state.errorMessage,
+          ' \uD83D\uDE4F'
         )
       );
     }

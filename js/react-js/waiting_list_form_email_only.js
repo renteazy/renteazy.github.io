@@ -8,6 +8,8 @@ class WaitListEmailForm extends React.Component {
     this.state = {
       loading: false,
       addedToWaitingList: false,
+      hasError: false,
+      errorMessage: '',
       customerType: {
         placeholder: 'Select an option',
         option: [
@@ -40,6 +42,8 @@ class WaitListEmailForm extends React.Component {
       return ({
         ...state,
         loading: true,
+        errorMessage: '',
+        hasError: false,
       });
     });
 
@@ -48,6 +52,17 @@ class WaitListEmailForm extends React.Component {
         return ({
           ...state,
           addedToWaitingList: true,
+        });
+      });
+    };
+
+    const errorHandling = (error) => {
+      $('#waitListForm')[0].reset();
+      this.setState((state) => {
+        return ({
+          ...state,
+          errorMessage: error.message,
+          hasError: true,
         });
       });
     };
@@ -78,6 +93,10 @@ class WaitListEmailForm extends React.Component {
       },
       success: function(data, textStatus, xhr) {
         if (xhr.status === 200) {
+          if (data.error) {
+            errorHandling(data.error);
+            return;
+          }
           formSubmitSuccess();
         } else {
           formSubmitError();
@@ -140,6 +159,11 @@ class WaitListEmailForm extends React.Component {
                 <h1>
                   See you soon 🥳
                 </h1>
+              </div>
+          )}
+          {this.state.hasError && (
+              <div className='waiting-list-error'>
+                {this.state.errorMessage} 🙏
               </div>
           )}
         </div>

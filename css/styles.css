@@ -45,6 +45,16 @@ Colors:
     text-align: center;
 }
 
+.waiting-list-error {
+    text-align: center;
+    font-size: 20px !important;
+    background-color: white;
+    display: inline-block;
+    padding: 0.5rem 0.5rem;
+    border-radius: 8px;
+    color: #987AFF;
+}
+
 .landing-waiting-list {
     margin-top: 32px;
     min-width: 300px;
@@ -74,6 +84,7 @@ Colors:
 
 .form-button {
     display: flex;
+    margin: auto;
     justify-content: center;
 }
 
