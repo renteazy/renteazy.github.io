@@ -159,7 +159,8 @@ var WaitListEmailForm = function (_React$Component) {
             { className: 'form-group form-button' },
             !this.state.loading && React.createElement(
               'button',
-              { type: 'submit', className: 'btn-solid-lg page-scroll form-control-submit-button' },
+              { type: 'submit',
+                className: 'btn-solid-lg page-scroll form-control-submit-button' },
               'JOIN'
             ),
             this.state.loading && React.createElement('div', { className: 'loader' })
@@ -173,11 +174,10 @@ var WaitListEmailForm = function (_React$Component) {
         this.state.addedToWaitingList && React.createElement(
           'div',
           { className: 'waiting-list-added' },
-          React.createElement('img', { src: 'images/r-benifits.png', alt: 'alternative' }),
           React.createElement(
             'h1',
             null,
-            'You have been added!'
+            'See you soon \uD83E\uDD73'
           )
         )
       );

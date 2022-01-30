@@ -41,6 +41,10 @@ Colors:
 /*     00. Custom Styles      */
 /******************************/
 
+#waiting-list-email {
+    text-align: center;
+}
+
 .landing-waiting-list {
     margin-top: 64px;
     min-width: 300px;
@@ -63,12 +67,20 @@ Colors:
 }
 
 .waiting-list-added > h1 {
-    margin: 32px;
-    color: #5f4dee;
+    margin: 24px !important;
+    color: #987AFF !important;
 }
 
 .waiting-list-added > img {
     max-width: 35%;
+}
+
+.landing-title .deposit-free, .waiting-list-added {
+    background-color: white;
+    display: inline-block;
+    padding: 0.5rem 0.5rem;
+    border-radius: 8px;
+    color: #987AFF;
 }
 
 .loader {
@@ -169,20 +181,12 @@ h6 {
 }
 
 .landing-title h1, .join-header {
-    color: white !important;
+    /*color: white;*/
 }
 
 .landing-title h4 {
     text-align: center;
     color: white !important;
-}
-
-.landing-title .deposit-free {
-    background-color: white;
-    display: inline-block;
-    padding: 0.5rem 0.5rem;
-    border-radius: 8px;
-    color: #987AFF;
 }
 
 .above-heading {
