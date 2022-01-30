@@ -41,6 +41,16 @@ Colors:
 /*     00. Custom Styles      */
 /******************************/
 
+.landing-waiting-list {
+    margin-top: 24px;
+    min-width: 520px;
+}
+
+.landing-waiting-list .form-control-radio > label,
+.landing-waiting-list .help-block.with-errors .list-unstyled {
+    color: white;
+}
+
 .form-button {
     display: flex;
     justify-content: center;
@@ -148,11 +158,18 @@ h6 {
     letter-spacing: -0.1px;
 }
 
+.landing-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .landing-title h1, .join-header {
     color: #ffff00 !important;
 }
 
 .landing-title h2 {
+    text-align: center;
     color: #ffff8e !important;
 }
 
@@ -918,6 +935,7 @@ input[type='checkbox'] {
 }
 
 .header .text-container {
+
     margin-bottom: 3rem;
 }
 
