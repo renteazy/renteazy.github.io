@@ -20,16 +20,14 @@ var WaitListForm = function (_React$Component) {
       e.preventDefault();
       var email = $('#wemail').val();
       var customerType = $('input[name="customerType"]:checked').val();
-      var name = $('#wname').val();
 
-      if (!email || !name) {
+      if (!email) {
         return;
       }
 
       var data = {
         'email': email,
-        'customerType': customerType,
-        'name': name
+        'customerType': customerType
       };
       _this.submitForm(data);
     };
@@ -111,17 +109,6 @@ var WaitListForm = function (_React$Component) {
         !this.state.addedToWaitingList && React.createElement(
           'form',
           { id: 'waitListForm', 'data-toggle': 'validator', 'data-focus': 'false', onSubmit: this.handleSubmit },
-          React.createElement(
-            'div',
-            { className: 'form-group' },
-            React.createElement('input', { type: 'text', className: 'form-control-input', id: 'wname', required: true, onBlur: this.handleBlur }),
-            React.createElement(
-              'label',
-              { className: 'label-control', htmlFor: 'wname' },
-              'Full Name'
-            ),
-            React.createElement('div', { className: 'help-block with-errors' })
-          ),
           React.createElement(
             'div',
             { className: 'form-group' },

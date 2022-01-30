@@ -23,16 +23,14 @@ class WaitListForm extends React.Component {
     e.preventDefault();
     var email = $('#wemail').val();
     var customerType = $('input[name="customerType"]:checked').val();
-    var name = $('#wname').val();
 
-    if (!email || !name) {
+    if (!email) {
       return;
     }
 
     var data = {
       'email': email,
       'customerType': customerType,
-      'name': name,
     };
     this.submitForm(data);
   };
@@ -104,11 +102,6 @@ class WaitListForm extends React.Component {
           {!this.state.addedToWaitingList &&
           (
               <form id="waitListForm" data-toggle="validator" data-focus="false" onSubmit={this.handleSubmit}>
-                <div className="form-group">
-                  <input type="text" className="form-control-input" id="wname" required onBlur={this.handleBlur}/>
-                  <label className="label-control" htmlFor="wname">Full Name</label>
-                  <div className="help-block with-errors"/>
-                </div>
                 <div className="form-group">
                   <input type="email" className="form-control-input" id="wemail" required onBlur={this.handleBlur}/>
                   <label className="label-control" htmlFor="wemail">Email</label>

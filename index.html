@@ -67,10 +67,10 @@
           <a class="nav-link page-scroll" href="#header">HOME <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link page-scroll" href="#property-managers-features">PROPERTY MANAGERS</a>
+          <a class="nav-link page-scroll" href="#renters-features">RENTERS</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link page-scroll" href="#renters-features">RENTERS</a>
+          <a class="nav-link page-scroll" href="#property-managers-features">PROPERTY MANAGERS</a>
         </li>
       </ul>
       <span class="nav-item">
@@ -89,7 +89,7 @@
       <div class="row">
         <div class="col-lg-12 col-xl-12">
           <div class="text-container landing-title">
-            <h1>Rent a home, deposit free</h1>
+            <h1>Rent a home, <span class="deposit-free">deposit free</span></h1>
             <h4>We're tackling financial problems for renters, starting with the dreaded security deposit</h4>
             <div class="form-container landing-waiting-list">
               <div id="waiting-list-email"></div>
@@ -129,7 +129,7 @@
           </div>
           <div class="card-body">
             <h4 class="card-title">Alternative security deposit</h4>
-            <p>Remove the need for a renter to pay an upfront cash security deposit with a one-time low-cost payment.</p>
+            <p>Remove the need for a renter to pay an upfront cash security deposit with low-cost payment alternative.</p>
           </div>
         </div>
         <!-- end of card -->
@@ -141,7 +141,7 @@
           </div>
           <div class="card-body">
             <h4 class="card-title">Full protection</h4>
-            <p>A RentEasy guarantee to meet all expenses associated with violation of lease terms (missed rent, damage to property).</p>
+            <p>A RentEasy guarantee that provides immediate protection for landlords and flexible repayment terms for renters.</p>
           </div>
         </div>
         <!-- end of card -->
@@ -616,6 +616,8 @@
         <!-- Sign Up Form -->
         <div class="form-container">
           <div id="waiting_list_form"></div>
+          <!--          <div id="waiting-list-email"></div>-->
+
         </div> <!-- end of form container -->
         <!-- end of sign up form -->
 
@@ -678,6 +680,21 @@
 <script src="js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
 <script src="js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
 <script src="js/scripts.js"></script> <!-- Custom scripts -->
+
+<!-- Google analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S8230Z6EG8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+
+  gtag('js', new Date());
+
+  gtag('config', 'G-S8230Z6EG8');
+</script>
 
 <!-- Load React. -->
 <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
