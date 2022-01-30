@@ -211,5 +211,8 @@ var WaitListEmailForm = function (_React$Component) {
   return WaitListEmailForm;
 }(React.Component);
 
-var domContainer = document.querySelector('#waiting-list-email');
-ReactDOM.render(React.createElement(WaitListEmailForm, null), domContainer);
+var domContainerBottom = document.querySelector('#waiting-list-email-bottom');
+ReactDOM.render(React.createElement(WaitListEmailForm, null), domContainerBottom);
+
+var domContainerTop = document.querySelector('#waiting-list-email-top');
+ReactDOM.render(React.createElement(WaitListEmailForm, null), domContainerTop);

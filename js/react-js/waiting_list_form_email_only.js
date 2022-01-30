@@ -171,7 +171,11 @@ class WaitListEmailForm extends React.Component {
   }
 }
 
-const domContainer = document.querySelector('#waiting-list-email');
-ReactDOM.render(<WaitListEmailForm/>, domContainer);
+const domContainerBottom = document.querySelector('#waiting-list-email-bottom');
+ReactDOM.render(<WaitListEmailForm/>, domContainerBottom);
+
+
+const domContainerTop = document.querySelector('#waiting-list-email-top');
+ReactDOM.render(<WaitListEmailForm/>, domContainerTop);
 
 
