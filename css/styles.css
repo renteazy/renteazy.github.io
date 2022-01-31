@@ -80,6 +80,7 @@ Colors:
 .landing-waiting-list .form-control-radio > label,
 .landing-waiting-list .help-block.with-errors .list-unstyled {
     color: white;
+    margin-bottom: 0;
 }
 
 .form-button {
@@ -422,10 +423,14 @@ a.white {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     height: 3rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .form-control-radio > label {
-    margin-left: 8px;
+    margin-left: 12px;
 }
 
 .radio-container {
@@ -448,8 +453,8 @@ input[type='radio']:after {
     width: 20px;
     height: 20px;
     border-radius: 15px;
-    top: -2px;
-    left: -2px;
+    top: -4px;
+    left: -3px;
     position: relative;
     background-color: white;
     content: '';
@@ -462,8 +467,8 @@ input[type='radio']:checked:after {
     width: 20px;
     height: 20px;
     border-radius: 15px;
-    top: -2px;
-    left: -2px;
+    top: -4px;
+    left: -3px;
     position: relative;
     background-color: #987AFF;
     content: '';
