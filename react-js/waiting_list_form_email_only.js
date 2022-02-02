@@ -36,7 +36,7 @@ var WaitListEmailForm = function (_React$Component) {
       _this.setState(function (state) {
         return Object.assign({}, state, {
           loading: true,
-          errorMessage: '',
+          errorMessage: 'test',
           hasError: false
         });
       });
