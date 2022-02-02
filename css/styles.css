@@ -1911,6 +1911,12 @@ a:hover.back-to-top {
 /* end of min-width width 768px */
 
 
+@media (max-width: 992px) {
+    .invert-row {
+        flex-direction: column-reverse;
+    }
+}
+
 /* Min-width width 992px */
 @media (min-width: 992px) {
     .the-problem-text-container {
@@ -2171,7 +2177,6 @@ a:hover.back-to-top {
 
 /* Min-width width 1200px */
 @media (min-width: 1200px) {
-
     /* General Styles */
     .h2-heading {
         width: 50%;
