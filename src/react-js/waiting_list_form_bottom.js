@@ -1,6 +1,6 @@
 'use strict';
 
-class WaitListEmailForm extends React.Component {
+class WaitListFormBottom extends React.Component {
 
   constructor(props) {
     super(props);
@@ -23,7 +23,7 @@ class WaitListEmailForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    var email = $('#wemail').val();
+    var email = $('#wemailBottom').val();
     var customerType = $('input[name="customerType"]:checked').val();
 
     if (!email) {
@@ -57,7 +57,7 @@ class WaitListEmailForm extends React.Component {
     };
 
     const errorHandling = (error) => {
-      $('#waitListForm')[0].reset();
+      $('#waitListFormBottom')[0].reset();
       this.setState((state) => {
         return ({
           ...state,
@@ -119,50 +119,52 @@ class WaitListEmailForm extends React.Component {
     return (
         <div>
           {!this.state.addedToWaitingList &&
-          (
-              <form id="waitListForm" data-toggle="validator" data-focus="false" onSubmit={this.handleSubmit}>
-                <div className="form-group">
-                  <input type="email" className="form-control-input" id="wemail" required onBlur={this.handleBlur}/>
-                  <label className="label-control" htmlFor="wemail">Email</label>
-                  <div className="help-block with-errors"/>
-                </div>
-                <div className="form-group radio-container">
-                  <div className="form-control-radio">
-                    <input type="radio" id="customerTypeRenter" name="customerType" value="renter" defaultChecked/>
-                    <label htmlFor="customerTypeRenter">{this.state.customerType.option[0]}</label>
-                  </div>
-                  <div className="form-control-radio">
-                    <input type="radio" id="customerTypePropertyManager" name="customerType" value="propertyManager"/>
-                    <label htmlFor="customerTypePropertyManager">{this.state.customerType.option[1]}</label>
-                  </div>
-                  <div className="form-control-radio">
-                    <input type="radio" id="customerTypeEstateAgent" name="customerType" value="estateAgent"/>
-                    <label htmlFor="customerTypeEstateAgent">{this.state.customerType.option[2]}</label>
-                  </div>
-                </div>
-                <div className="form-group form-button">
-                  {!this.state.loading && (
-                      <button type="submit"
-                              className="btn-solid-lg page-scroll form-control-submit-button">JOIN WAITING LIST</button>
-                  )}
-                  {this.state.loading && (
-                      <div className="loader"/>
-                  )}
-                </div>
-                <div className="form-message">
-                  <div id="wmsgSubmit" className="h3 text-center hidden"/>
-                </div>
-              </form>
-          )}
+              (
+                  <form id="waitListFormBottom" data-toggle="validator" data-focus="false" onSubmit={this.handleSubmit}>
+                    <div className="form-group">
+                      <input type="email" className="form-control-input" id="wemailBottom" required onBlur={this.handleBlur}/>
+                      <label className="label-control" htmlFor="wemailBottom">Email</label>
+                      <div className="help-block with-errors"/>
+                    </div>
+                    <div className="form-group radio-container">
+                      <div className="form-control-radio">
+                        <input type="radio" id="customerTypeRenter" name="customerType" value="renter" defaultChecked/>
+                        <label htmlFor="customerTypeRenter">{this.state.customerType.option[0]}</label>
+                      </div>
+                      <div className="form-control-radio">
+                        <input type="radio" id="customerTypePropertyManager" name="customerType"
+                               value="propertyManager"/>
+                        <label htmlFor="customerTypePropertyManager">{this.state.customerType.option[1]}</label>
+                      </div>
+                      <div className="form-control-radio">
+                        <input type="radio" id="customerTypeEstateAgent" name="customerType" value="estateAgent"/>
+                        <label htmlFor="customerTypeEstateAgent">{this.state.customerType.option[2]}</label>
+                      </div>
+                    </div>
+                    <div className="form-group form-button">
+                      {!this.state.loading && (
+                          <button type="submit"
+                                  className="btn-solid-lg page-scroll form-control-submit-button">JOIN WAITING
+                            LIST</button>
+                      )}
+                      {this.state.loading && (
+                          <div className="loader"/>
+                      )}
+                    </div>
+                    <div className="form-message">
+                      <div id="wmsgSubmit" className="h3 text-center hidden"/>
+                    </div>
+                  </form>
+              )}
           {this.state.addedToWaitingList && (
-              <div className='waiting-list-added'>
+              <div className="waiting-list-added">
                 <h1>
                   See you soon 🥳
                 </h1>
               </div>
           )}
           {this.state.hasError && (
-              <div className='waiting-list-error'>
+              <div className="waiting-list-error">
                 {this.state.errorMessage} 🙏
               </div>
           )}
@@ -172,10 +174,7 @@ class WaitListEmailForm extends React.Component {
 }
 
 const domContainerBottom = document.querySelector('#waiting-list-email-bottom');
-ReactDOM.render(<WaitListEmailForm/>, domContainerBottom);
+ReactDOM.render(<WaitListFormBottom/>, domContainerBottom);
 
-
-const domContainerTop = document.querySelector('#waiting-list-email-top');
-ReactDOM.render(<WaitListEmailForm/>, domContainerTop);
 
 

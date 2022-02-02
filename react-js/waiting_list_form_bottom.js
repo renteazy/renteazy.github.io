@@ -8,25 +8,22 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var WaitListEmailForm = function (_React$Component) {
-  _inherits(WaitListEmailForm, _React$Component);
+var WaitListFormBottom = function (_React$Component) {
+  _inherits(WaitListFormBottom, _React$Component);
 
-  function WaitListEmailForm(props) {
-    _classCallCheck(this, WaitListEmailForm);
+  function WaitListFormBottom(props) {
+    _classCallCheck(this, WaitListFormBottom);
 
-    var _this = _possibleConstructorReturn(this, (WaitListEmailForm.__proto__ || Object.getPrototypeOf(WaitListEmailForm)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (WaitListFormBottom.__proto__ || Object.getPrototypeOf(WaitListFormBottom)).call(this, props));
 
     _this.handleSubmit = function (e) {
       e.preventDefault();
-      var email = $('#wemail').val();
+      var email = $('#wemailBottom').val();
       var customerType = $('input[name="customerType"]:checked').val();
 
-      console.log('-------------');
-      console.log(email);
       if (!email) {
         return;
       }
-      console.log('-------------');
 
       var data = {
         'email': email,
@@ -53,7 +50,7 @@ var WaitListEmailForm = function (_React$Component) {
       };
 
       var errorHandling = function errorHandling(error) {
-        $('#waitListForm')[0].reset();
+        $('#waitListFormBottom')[0].reset();
         _this.setState(function (state) {
           return Object.assign({}, state, {
             errorMessage: error.message,
@@ -121,7 +118,7 @@ var WaitListEmailForm = function (_React$Component) {
     return _this;
   }
 
-  _createClass(WaitListEmailForm, [{
+  _createClass(WaitListFormBottom, [{
     key: 'render',
     value: function render() {
       return React.createElement(
@@ -129,14 +126,14 @@ var WaitListEmailForm = function (_React$Component) {
         null,
         !this.state.addedToWaitingList && React.createElement(
           'form',
-          { id: 'waitListForm', 'data-toggle': 'validator', 'data-focus': 'false', onSubmit: this.handleSubmit },
+          { id: 'waitListFormBottom', 'data-toggle': 'validator', 'data-focus': 'false', onSubmit: this.handleSubmit },
           React.createElement(
             'div',
             { className: 'form-group' },
-            React.createElement('input', { type: 'email', className: 'form-control-input', id: 'wemail', required: true, onBlur: this.handleBlur }),
+            React.createElement('input', { type: 'email', className: 'form-control-input', id: 'wemailBottom', required: true, onBlur: this.handleBlur }),
             React.createElement(
               'label',
-              { className: 'label-control', htmlFor: 'wemail' },
+              { className: 'label-control', htmlFor: 'wemailBottom' },
               'Email'
             ),
             React.createElement('div', { className: 'help-block with-errors' })
@@ -212,11 +209,8 @@ var WaitListEmailForm = function (_React$Component) {
     }
   }]);
 
-  return WaitListEmailForm;
+  return WaitListFormBottom;
 }(React.Component);
 
 var domContainerBottom = document.querySelector('#waiting-list-email-bottom');
-ReactDOM.render(React.createElement(WaitListEmailForm, null), domContainerBottom);
-
-var domContainerTop = document.querySelector('#waiting-list-email-top');
-ReactDOM.render(React.createElement(WaitListEmailForm, null), domContainerTop);
+ReactDOM.render(React.createElement(WaitListFormBottom, null), domContainerBottom);

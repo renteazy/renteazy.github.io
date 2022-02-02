@@ -8,25 +8,22 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var WaitListEmailForm = function (_React$Component) {
-  _inherits(WaitListEmailForm, _React$Component);
+var WaitListFormTop = function (_React$Component) {
+  _inherits(WaitListFormTop, _React$Component);
 
-  function WaitListEmailForm(props) {
-    _classCallCheck(this, WaitListEmailForm);
+  function WaitListFormTop(props) {
+    _classCallCheck(this, WaitListFormTop);
 
-    var _this = _possibleConstructorReturn(this, (WaitListEmailForm.__proto__ || Object.getPrototypeOf(WaitListEmailForm)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (WaitListFormTop.__proto__ || Object.getPrototypeOf(WaitListFormTop)).call(this, props));
 
     _this.handleSubmit = function (e) {
       e.preventDefault();
       var email = $('#wemail').val();
       var customerType = $('input[name="customerType"]:checked').val();
 
-      console.log('-------------');
-      console.log(email);
       if (!email) {
         return;
       }
-      console.log('-------------');
 
       var data = {
         'email': email,
@@ -121,7 +118,7 @@ var WaitListEmailForm = function (_React$Component) {
     return _this;
   }
 
-  _createClass(WaitListEmailForm, [{
+  _createClass(WaitListFormTop, [{
     key: 'render',
     value: function render() {
       return React.createElement(
@@ -212,11 +209,8 @@ var WaitListEmailForm = function (_React$Component) {
     }
   }]);
 
-  return WaitListEmailForm;
+  return WaitListFormTop;
 }(React.Component);
 
-var domContainerBottom = document.querySelector('#waiting-list-email-bottom');
-ReactDOM.render(React.createElement(WaitListEmailForm, null), domContainerBottom);
-
 var domContainerTop = document.querySelector('#waiting-list-email-top');
-ReactDOM.render(React.createElement(WaitListEmailForm, null), domContainerTop);
+ReactDOM.render(React.createElement(WaitListFormTop, null), domContainerTop);
