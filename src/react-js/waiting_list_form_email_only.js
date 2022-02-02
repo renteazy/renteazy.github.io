@@ -143,7 +143,7 @@ class WaitListEmailForm extends React.Component {
                 <div className="form-group form-button">
                   {!this.state.loading && (
                       <button type="submit"
-                              className="btn-solid-lg page-scroll form-control-submit-button">JOIN</button>
+                              className="btn-solid-lg page-scroll form-control-submit-button">JOIN WAITING LIST</button>
                   )}
                   {this.state.loading && (
                       <div className="loader"/>

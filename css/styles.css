@@ -41,6 +41,10 @@ Colors:
 /*     00. Custom Styles      */
 /******************************/
 
+#waiting-list-email-top {
+    text-align: center;
+}
+
 #waiting-list-email {
     text-align: center;
 }
