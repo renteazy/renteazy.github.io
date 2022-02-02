@@ -42,7 +42,7 @@ class WaitListEmailForm extends React.Component {
       return ({
         ...state,
         loading: true,
-        errorMessage: 'test',
+        errorMessage: '',
         hasError: false,
       });
     });
