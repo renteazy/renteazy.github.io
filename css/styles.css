@@ -1270,8 +1270,8 @@ input[type='checkbox'] {
 /*     09. Details     */
 /***********************/
 .basic-1 {
-    padding-top: 7.5rem;
-    padding-bottom: 8rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
 }
 
 .basic-1 .text-container {
@@ -1913,8 +1913,6 @@ a:hover.back-to-top {
 
 /* Min-width width 992px */
 @media (min-width: 992px) {
-
-
     .the-problem-text-container {
         position: absolute;
         width: 100%;
@@ -2076,7 +2074,7 @@ a:hover.back-to-top {
     /* end of features lightboxes */
     /* Details */
     .basic-1 {
-        padding-top: 8rem;
+        padding-top: 4rem;
     }
 
     .basic-1 .text-container {
