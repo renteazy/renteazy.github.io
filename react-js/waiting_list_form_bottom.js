@@ -19,7 +19,7 @@ var WaitListFormBottom = function (_React$Component) {
     _this.handleSubmit = function (e) {
       e.preventDefault();
       var email = $('#wemailBottom').val();
-      var customerType = $('input[name="customerType"]:checked').val();
+      var customerType = $('input[name="customerTypeBottom"]:checked').val();
 
       if (!email) {
         return;
@@ -144,31 +144,31 @@ var WaitListFormBottom = function (_React$Component) {
             React.createElement(
               'div',
               { className: 'form-control-radio' },
-              React.createElement('input', { type: 'radio', id: 'customerTypeRenter', name: 'customerType', value: 'renter', defaultChecked: true }),
+              React.createElement('input', { type: 'radio', id: 'customerTypeRenterBottom', name: 'customerTypeBottom', value: 'renter', defaultChecked: true }),
               React.createElement(
                 'label',
-                { htmlFor: 'customerTypeRenter' },
+                { htmlFor: 'customerTypeRenterBottom' },
                 this.state.customerType.option[0]
               )
             ),
             React.createElement(
               'div',
               { className: 'form-control-radio' },
-              React.createElement('input', { type: 'radio', id: 'customerTypePropertyManager', name: 'customerType',
+              React.createElement('input', { type: 'radio', id: 'customerTypePropertyManagerBottom', name: 'customerTypeBottom',
                 value: 'propertyManager' }),
               React.createElement(
                 'label',
-                { htmlFor: 'customerTypePropertyManager' },
+                { htmlFor: 'customerTypePropertyManagerBottom' },
                 this.state.customerType.option[1]
               )
             ),
             React.createElement(
               'div',
               { className: 'form-control-radio' },
-              React.createElement('input', { type: 'radio', id: 'customerTypeEstateAgent', name: 'customerType', value: 'estateAgent' }),
+              React.createElement('input', { type: 'radio', id: 'customerTypeEstateAgentBottom', name: 'customerTypeBottom', value: 'estateAgent' }),
               React.createElement(
                 'label',
-                { htmlFor: 'customerTypeEstateAgent' },
+                { htmlFor: 'customerTypeEstateAgentBottom' },
                 this.state.customerType.option[2]
               )
             )

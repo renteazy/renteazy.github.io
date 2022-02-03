@@ -81,10 +81,14 @@ Colors:
     }
 }
 
-.landing-waiting-list .form-control-radio > label,
 .landing-waiting-list .help-block.with-errors .list-unstyled {
     color: white;
     margin-bottom: 0;
+}
+
+
+.landing-waiting-list .form-control-radio > label {
+    color: white;
 }
 
 .form-button {
@@ -427,14 +431,15 @@ a.white {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     height: 3rem;
-    display: inline-flex;
+    display: flex;
+    flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
     width: 100%;
 }
 
 .form-control-radio > label {
-    margin-left: 12px;
+    margin-bottom: 12px;
 }
 
 .radio-container {
@@ -1912,6 +1917,16 @@ a:hover.back-to-top {
 
 
 @media (max-width: 992px) {
+
+    .form-control-radio > label {
+        margin-left: 12px;
+        margin-bottom: 0;
+    }
+
+    .form-control-radio {
+        flex-direction: row;
+    }
+
     .invert-row {
         flex-direction: column-reverse;
     }

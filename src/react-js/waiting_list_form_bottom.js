@@ -24,7 +24,7 @@ class WaitListFormBottom extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     var email = $('#wemailBottom').val();
-    var customerType = $('input[name="customerType"]:checked').val();
+    var customerType = $('input[name="customerTypeBottom"]:checked').val();
 
     if (!email) {
       return;
@@ -128,17 +128,17 @@ class WaitListFormBottom extends React.Component {
                     </div>
                     <div className="form-group radio-container">
                       <div className="form-control-radio">
-                        <input type="radio" id="customerTypeRenter" name="customerType" value="renter" defaultChecked/>
-                        <label htmlFor="customerTypeRenter">{this.state.customerType.option[0]}</label>
+                        <input type="radio" id="customerTypeRenterBottom" name="customerTypeBottom" value="renter" defaultChecked/>
+                        <label htmlFor="customerTypeRenterBottom">{this.state.customerType.option[0]}</label>
                       </div>
                       <div className="form-control-radio">
-                        <input type="radio" id="customerTypePropertyManager" name="customerType"
+                        <input type="radio" id="customerTypePropertyManagerBottom" name="customerTypeBottom"
                                value="propertyManager"/>
-                        <label htmlFor="customerTypePropertyManager">{this.state.customerType.option[1]}</label>
+                        <label htmlFor="customerTypePropertyManagerBottom">{this.state.customerType.option[1]}</label>
                       </div>
                       <div className="form-control-radio">
-                        <input type="radio" id="customerTypeEstateAgent" name="customerType" value="estateAgent"/>
-                        <label htmlFor="customerTypeEstateAgent">{this.state.customerType.option[2]}</label>
+                        <input type="radio" id="customerTypeEstateAgentBottom" name="customerTypeBottom" value="estateAgent"/>
+                        <label htmlFor="customerTypeEstateAgentBottom">{this.state.customerType.option[2]}</label>
                       </div>
                     </div>
                     <div className="form-group form-button">
