@@ -1092,6 +1092,10 @@ input[type='checkbox'] {
     text-align: center;
 }
 
+.landing-form h1 {
+    margin-bottom: 48px;
+}
+
 .background-card {
     background-color: #f3f7fd;
 }

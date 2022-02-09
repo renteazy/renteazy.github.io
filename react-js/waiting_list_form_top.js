@@ -180,7 +180,7 @@ var WaitListFormTop = function (_React$Component) {
               'button',
               { type: 'submit',
                 className: 'btn-solid-lg page-scroll form-control-submit-button' },
-              'JOIN WAITING LIST'
+              'JOIN'
             ),
             this.state.loading && React.createElement('div', { className: 'loader' })
           ),
